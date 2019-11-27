@@ -7,5 +7,5 @@ public interface UserMapper {
 
     public User getUsersbyId(String id);
 
-    public void registUser(User user);
+    public int creatUser(User user);
 }

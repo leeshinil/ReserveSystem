@@ -23,7 +23,6 @@ var email_check;
 var signup_agree = document.getElementById('signup_agree');
 
 function goPost() {
-
     idNow = $("#id").val();
     password = $("#pw").val();
     confirm = $("#confirm").val();
@@ -78,7 +77,16 @@ function goPost() {
 
     if (id_now_check  && password_check && name_check
         && phone_check && email_check && signup_agree_check) {
-        alert("회원가입 성공");
+
+
+        var auth =  $("#auth").val();
+        var inputHtml1 = "<input name='authority' value='"+auth+"' hidden />";
+        console.log(inputHtml1);
+        $("#hidden").append(inputHtml1);
+        var group =  $("#group").val();
+        var inputHtml2 = "<input name='group' value='"+group+"' hidden />";
+        $("#hidden").append(inputHtml2);
+        alert("회원가입");
         signup_form.submit();
     } else {
         return false;

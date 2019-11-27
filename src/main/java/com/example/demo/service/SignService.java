@@ -8,7 +8,7 @@ public interface SignService {
     //signup
     public User getUsersbyId(String id);
 
-    public void registUser(User user);
+    public void creatUser(User user);
 
     //signin
     public User signin(String id, String pw);

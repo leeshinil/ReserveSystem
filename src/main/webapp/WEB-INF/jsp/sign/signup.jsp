@@ -83,29 +83,21 @@
             <!--직급-->
             <!--본부장 : first, 부장 : second, 사원 : third-->
             <div class="form-group">
-                <%--@declare id="input-select"--%><label for="input-select">조회 권한</label>
-                <select class="form-control" id="R">
-                    <option  value="first">본부장</option>
-                    <option value="second">부장</option>
-                    <option selected="" value="third">사원</option>
+                <%--@declare id="input-select"--%><label for="input-select">직급</label>
+                <select class="form-control" id="auth">
+                    <option  value="bon">본부장</option>
+                    <option value="bu">부장</option>
+                    <option selected="" value="sa">사원</option>
                 </select>
             </div>
-
             <!--부서 선택-->
-            <div class="col-12 col-sm-8 col-lg-6" id="selectCategory">
-                <a class="nav-link" href="#"><i class="fas fa-f fa-folder">부서</i></a>
-                <label class="custom-control custom-checkbox"><input name="A" class="custom-control-input"
-                                                                     type="checkbox" value="A"
-                                                                     data-parsley-errors-container="#error-container1"
-                                                                     data-parsley-mincheck="1"
-                                                                     data-parsley-multiple="groups">
-                    <span class="custom-control-label">A 부서</span></label>
-                <label class="custom-control custom-checkbox"><input name="B" class="custom-control-input"
-                                                                     type="checkbox" value="B"
-                                                                     data-parsley-errors-container="#error-container1"
-                                                                     data-parsley-mincheck="1"
-                                                                     data-parsley-multiple="groups">
-                    <span class="custom-control-label">B 부서</span></label>
+            <div class="form-group">
+                <%--@declare id="input-select"--%><label for="input-select">그룹</label>
+                <select class="form-control" id="group">
+                    <option  value="a">A그룹</option>
+                    <option value="b">B그룹</option>
+                    <option selected="" value="none">없음</option>
+                </select>
             </div>
             <!--동의 checkbox-->
             <div class="form-group">
@@ -114,9 +106,13 @@
                     <span class="custom-control-label">회원가입을 동의합니다</span>
                 </label>
             </div>
+
+            <div id="hidden">
+            </div>
+
             <!--회원가입 버튼-->
             <div>
-                <button class="btn btn-block btn-primary" id="signup_btn" type="button" onClick="goPost()">회원가입</button>
+                <a class="btn btn-block btn-primary" id="signup_btn"  onClick="goPost()">회원가입</a>
             </div>
         </div>
         <div class="card-footer bg-white">

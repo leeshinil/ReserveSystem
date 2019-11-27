@@ -2,7 +2,7 @@ package com.example.demo.dto;
 
 public class GroupMember {
     int idx;
-    String fk_groupname;
+    int fk_groupidx;
     String fk_userid;
 
     public int getIdx() {
@@ -13,12 +13,12 @@ public class GroupMember {
         this.idx = idx;
     }
 
-    public String getFk_groupname() {
-        return fk_groupname;
+    public int getFk_groupidx() {
+        return fk_groupidx;
     }
 
-    public void setFk_groupname(String fk_groupname) {
-        this.fk_groupname = fk_groupname;
+    public void setFk_groupidx(int fk_groupidx) {
+        this.fk_groupidx = fk_groupidx;
     }
 
     public String getFk_userid() {

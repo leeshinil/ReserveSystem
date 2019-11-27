@@ -37,16 +37,13 @@ public class SignServiceImpl implements SignService {
     }
 
     @Override
-    public void registUser(User user) {
+    public void creatUser(User user) {
         String rawPassword = user.getPw();
-
-        System.out.println("@@@@@@@@@@@" + user.getPw());
 
         String encodedPassword = new BCryptPasswordEncoder().encode(rawPassword);
         user.setPw(encodedPassword);
-        System.out.println("!!!!!!!!!" + user.getPw());
         try {
-            usersDao.registUser(user);
+            usersDao.creatUser(user);
         } catch (Exception e) {
             e.printStackTrace();
         }

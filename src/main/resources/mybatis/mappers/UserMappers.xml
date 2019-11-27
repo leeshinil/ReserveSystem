@@ -11,7 +11,7 @@
        SELECT * FROM user WHERE id= #{id}
     </select>
 
-    <insert id="registUser" parameterType="user">
+    <insert id="creatUser" parameterType="user" keyProperty="idx">
        INSERT INTO user (id,pw,name,phone,email)
        values(#{id},#{pw},#{name},#{phone},#{email})
     </insert>
