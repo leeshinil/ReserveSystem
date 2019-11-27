@@ -6,5 +6,3 @@
         SELECT * FROM `groups` WHERE groupname= #{groupName}
     </select>
 </mapper>
-
-

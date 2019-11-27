@@ -36,7 +36,7 @@ function signcheck() {
     return $.ajax({
         type: 'POST',
         data: jsonData,
-        url: "rest/signin",
+        url: "signRest/signin",
         dataType: "json",
         contentType: "application/json; charset=UTF-8",
         error: function (error) {

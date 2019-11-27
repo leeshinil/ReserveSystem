@@ -124,7 +124,7 @@ function idcheck() {
     return $.ajax({
         type: 'POST',
         data: jsonData,
-        url: "rest/signup_id",
+        url: "signRest/signup_id",
         dataType: "json",
         contentType: "application/json; charset=UTF-8",
         error: function (error) {

@@ -15,7 +15,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 @RestController
-@RequestMapping("/rest")
+@RequestMapping("/signRest")
 public class SignRestController {
     @Autowired
     SignService signService;
