@@ -88,11 +88,11 @@
                                     return $.ajax({
                                         type: 'POST',
                                         data: jsonData,
-                                        url: "rest/readReserveTable",
+                                        url: "reserveRest/readReserveTable",
                                         dataType: "json",
                                         contentType: "application/json; charset=UTF-8",
                                         success: function (data){
-
+                                            printReserveList(data);
                                         },
                                         error: function (error) {
                                             console.log(error);
@@ -144,22 +144,67 @@
                                     <th scope="col">17:00-18:00</th>
                                 </tr>
                                 </thead>
-                                <tbody>
-                                <%--                                <c:if test="#{element.img == true}"> <i class="fas fa-image"></i> </c:if>--%>
-                                <c:set var="l" value="${fn:length(list)}" />
-                                <c:forEach var="element" items="${list}" varStatus="var" >
-                                    <tr onclick="location.href='/detail/${element.postNo}'" style="cursor:pointer;">
-                                        <th scope="col"><font size="1"> ${l - var.index}</font></th>
-                                        <th scope="col">${element.postTitle}  &nbsp; &nbsp; &nbsp;<c:if test="${element.img == true}"><span class="badge badge-pill badge-success "><i class="fas fa-image"></i></span>  </c:if>
-                                            <c:if test="${element.file == true}"><span class="badge badge-pill badge-primary ">첨부파일</span> </c:if><c:if test="${element.commentCount >0}"><span class="badge badge-success">${element.commentCount}</span></c:if></th>
-                                        <th scope="col" >${element.fk_postNick}</th>
-                                        <th scope="col"><font size="1" > ${element.postDate} </font></th>
-                                        <th scope="col"><font size="1">${element.hits}</font></th>
-                                    </tr>
-                                </c:forEach>
+                                <tbody id="reserveList">
+<%--                                    <tr onclick="" style="cursor:pointer;">--%>
+<%--                                        <th scope="col"><font size="1"></font></th>--%>
+<%--                                        <th scope="col"></th>--%>
+<%--                                        <th scope="col" ></th>--%>
+<%--                                        <th scope="col"></th>--%>
+<%--                                        <th scope="col"></th>--%>
+<%--                                    </tr>--%>
                                 </tbody>
                             </table>
                         </div>
+                        <script>
+
+                            function printReserveList(data){
+                                var isA = false;
+                                var isB = false;
+                                // if(data.length ==0){
+                                //     alert("조회된 데이타가 없습니다.");
+                                //     return false;
+                                // }
+
+                                for (var i = 0; i < data.length; i++) {
+                                    var roomname = data[i].roomname;
+                                    console.log("is A= "+isA);
+                                    if( !isA &&roomname =="A회의실"){
+                                        var html = "<tr>";
+                                        html += "<th scope='col'>"+roomname+"</th>";
+                                        isA = true;
+                                        for(var j=0; j< 10; j++){
+                                            html += "<th scope='col' id ='"+roomname+"_"+j+"'></th>";
+                                        }
+                                        html += "</tr>"
+                                        $("#reserveList").append(html);
+                                    }
+                                    else if(!isB &&roomname =="B회의실"){
+                                        var html = "<tr>";
+                                        html += "<th scope='col'>"+roomname+"</th>";
+                                        isB = true;
+                                        for(var j=0; j< 10; j++){
+                                            html += "<th scope='col' id ='"+roomname+"_"+j+"'></th>";
+                                        }
+                                        html += "</tr>"
+                                        $("#reserveList").append(html);
+                                    }
+
+                                    if(isA || isB){
+                                        var timestr = data[i].start.split(':');
+                                        var timeint = parseInt(timestr);
+                                        timeint = timeint - 8;
+                                        // $("'#"+roomname+"_"+timeint+"'").append("O");
+                                        for (var j = 0; j < data[i].count; j++) {
+                                            $("#"+roomname+"_"+(timeint+j)).append("O");
+                                            $("#"+roomname+"_"+(timeint+j)).attr("style","cursor:pointer;");
+                                            $("#"+roomname+"_"+(timeint+j)).attr("onclick","location.href='/detail/"+data[i].idx+"'");
+                                        }
+                                    }
+                                    var endHtml ="</tr>";
+                                }
+                                $("#reserveList").append(endHtml);
+                            }
+                        </script>
                     </div>
                 </div>
                 <!-- ============================================================== -->
