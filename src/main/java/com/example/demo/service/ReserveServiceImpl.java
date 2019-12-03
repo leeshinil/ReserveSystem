@@ -13,7 +13,13 @@ public class ReserveServiceImpl implements ReserveService{
     ReserveMapper reserveMapper;
 
     @Override
-    public List<Reserve> readReserveList(String date) {
-        return reserveMapper.readReserveList(date);
+    public List<Reserve> readReserveList(String date, String roomName) {
+        return reserveMapper.readReserveList(date, roomName);
     }
+
+    @Override
+    public void createReserve(Reserve reserve) {
+        reserveMapper.createReserve(reserve);
+    }
+
 }

@@ -94,8 +94,8 @@
             <div class="form-group">
                 <%--@declare id="input-select"--%><label for="input-select">그룹</label>
                 <select class="form-control" id="group">
-                    <option  value="a">A그룹</option>
-                    <option value="b">B그룹</option>
+                    <option  value="A">A그룹</option>
+                    <option value="B">B그룹</option>
                     <option selected="" value="none">없음</option>
                 </select>
             </div>

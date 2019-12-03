@@ -18,4 +18,9 @@ public class ReserveController {
 
         return "reserve/reservetable";
     }
+
+    @RequestMapping("/reserve")
+    public String reserve(Model model, HttpSession session){
+        return "/reserve/reserve";
+    }
 }

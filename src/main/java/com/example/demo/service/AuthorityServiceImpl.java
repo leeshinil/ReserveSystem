@@ -16,4 +16,9 @@ public class AuthorityServiceImpl implements AuthorityService{
     public void createAuthority(Authority authority) {
         authorityMapper.createAuthority(authority);
     }
+
+    @Override
+    public Authority readAuthority(String fk_userid) {
+        return authorityMapper.readAuthority(fk_userid);
+    }
 }

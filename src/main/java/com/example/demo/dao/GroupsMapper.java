@@ -4,4 +4,5 @@ import com.example.demo.dto.Groups;
 
 public interface GroupsMapper {
     public Groups readGroupByName(String groupName);
+    public Groups readGroupByidx (int idx);
 }

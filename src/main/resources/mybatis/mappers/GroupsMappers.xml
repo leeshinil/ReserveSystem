@@ -5,4 +5,8 @@
     <select id="readGroupByName" resultType="groups" parameterType="String">
         SELECT * FROM `groups` WHERE groupname= #{groupName}
     </select>
+
+    <select id="readGroupByidx" resultType="groups" parameterType="int">
+        SELECT * FROM `groups` WHERE idx= #{idx}
+    </select>
 </mapper>

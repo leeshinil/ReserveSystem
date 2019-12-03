@@ -3,8 +3,12 @@
 <mapper namespace="com.example.demo.dao.ReserveMapper">
 
     <select id="readReserveList" resultType="Reserve" parameterType="String">
-        SELECT * FROM reserve WHERE date = #{date}
+        SELECT * FROM reserve WHERE date = #{date} AND roomname = #{roomName}
     </select>
 
+    <insert id="createReserve" parameterType="reserve">
+        INSERT INTO reserve(fk_roomidx, date, start, fk_useridx, content, title, roomname, username, count)
+        VALUES (#{fk_roomidx}, #{date}, #{start}, #{fk_useridx}, #{content}, #{title}, #{roomname}, #{username}, #{count})
+    </insert>
 
 </mapper>

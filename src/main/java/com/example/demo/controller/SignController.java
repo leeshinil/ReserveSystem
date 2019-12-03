@@ -49,7 +49,8 @@ public class SignController {
 
         if (user != null) {
             session.setAttribute("user", user); // user
-            System.out.println("세션생성!!");
+            session.setAttribute("authority",authorityService.readAuthority(user.getId()));
+            session.setAttribute("group",groupsService.readGroupByidx(groupMemberService.readGroupMember(user.getId()).getFk_groupidx()));
             return "redirect:/home";
         }
 

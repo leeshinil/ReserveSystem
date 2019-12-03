@@ -9,5 +9,6 @@ import java.util.List;
 
 public interface ReserveService {
 
-    public List<Reserve> readReserveList (String date);
+    public List<Reserve> readReserveList (String date, String roomName);
+    public void createReserve(Reserve reserve);
 }

@@ -6,4 +6,7 @@
        INSERT INTO GroupMember (fk_groupidx,fk_userid)
        values(#{fk_groupidx},#{fk_userid})
     </insert>
+    <select id="readGroupMember" resultType="GroupMember">
+        SELECT * FROM groupmember WHERE fk_userid = #{fk_userid}
+    </select>
 </mapper>

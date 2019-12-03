@@ -15,4 +15,9 @@ public class GroupMemberServiceImpl implements GroupMemberService {
     public void createGroupMember(GroupMember groupMember) {
         groupMemberMapper.createGroupMember(groupMember);
     }
+
+    @Override
+    public GroupMember readGroupMember(String fk_userid) {
+        return groupMemberMapper.readGroupMember(fk_userid);
+    }
 }

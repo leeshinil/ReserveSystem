@@ -119,7 +119,7 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="card">
                         <h5 class="card-header"><b id="showArea"></b>
-                                <a class="btn btn-outline-dark" style="float:right">예약하기</a></h5>
+                                <a class="btn btn-outline-dark" style="float:right" href="/reserve">예약하기</a></h5>
                         <div class="card-body">
                             <table class="table table-hover">
                                 <colgroup>

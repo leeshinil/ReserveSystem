@@ -7,5 +7,9 @@
        values(#{fk_userid},#{authority})
     </insert>
 
+    <select id="readAuthority" parameterType="String" resultType="authority">
+        SELECT * FROM authority WHERE fk_userid = #{userid}
+    </select>
+
 
 </mapper>

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class GoupsServiceImpl implements GroupsService {
+public class GroupsServiceImpl implements GroupsService {
 
     @Autowired
     GroupsMapper groupMapper;
@@ -14,5 +14,10 @@ public class GoupsServiceImpl implements GroupsService {
     @Override
     public Groups readGroupByName(String groupName) {
         return groupMapper.readGroupByName(groupName);
+    }
+
+    @Override
+    public Groups readGroupByidx(int idx) {
+        return groupMapper.readGroupByidx(idx);
     }
 }
