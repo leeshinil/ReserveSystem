@@ -94,7 +94,7 @@ public class ReserveRestController {
             }
             int startInt = Integer.parseInt(start.split(":")[0]);
             int count = Integer.parseInt(end.split(":")[0]) - Integer.parseInt(start.split(":")[0]);
-            for (int i = startInt - 8; i < count; i++) {
+            for (int i = startInt - 8; i < (count+startInt - 8); i++) {
                 if (timecheck[i] == true) {
                     return fail;
                 }

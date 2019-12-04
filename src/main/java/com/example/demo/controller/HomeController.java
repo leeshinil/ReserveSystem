@@ -15,6 +15,13 @@ public class HomeController {
         return "home";
     }
 
+    @RequestMapping("/logout")
+    public String logout(Model model, HttpSession session){
+        session.removeAttribute("user");
+        session.removeAttribute("authority");
+        session.removeAttribute("group");
+        return "redirect:/home";
+    }
 
 
 }

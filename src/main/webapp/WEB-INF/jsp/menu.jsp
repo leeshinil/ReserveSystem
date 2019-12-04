@@ -21,23 +21,13 @@
                     <li class="nav-divider">Menu</li>
                     <!--  ###############################  Common board start  ##############################  -->
                     <div id = "commonlist">
-                        <li class='nav-item'><a class='nav-link' href='../edit'><i class="fas fa-wrench"></i> 게시판 개설</a></li>\
+                        <li class='nav-item'><a class='nav-link' href='../reservetable'><i class="fas fa-wrench"></i> 회의실 예약</a></li>
                     </div>
 
 
                     <!--   ##############################  수업별 게시판 start  #################################  -->
                     <br/>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-class" aria-controls="submenu-10">
-                            <i class="fas fa-f fa-folder"> 수업 게시판</i>
-                        </a>
 
-                        <div id="submenu-class" class="collapse submenu" style="">
-                            <ul class="nav flex-column" id = "classmenu">
-
-                            </ul>
-                        </div>
-                    </li>
 
                     <!--   ##############################  수업별 게시판 end  #######################################  -->
 

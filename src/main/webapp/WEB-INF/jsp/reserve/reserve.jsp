@@ -169,8 +169,11 @@
 
                         }
 
-
                         function wirte() {
+                            var start = $("#start").val();
+                            var end = $("#end").val();
+                            var roomname = $("#room").val();
+
                             if($("#titleInput").val()==""){
                                 alert("제목을 작성해 주십시오.");
                                 return ;
@@ -185,11 +188,13 @@
                                 return ;
                             }
 
-                            var endHtml = "<input name='end' value='"+end+"'>"
-                            var startHtml = "<input name='start' value='"+start+"'>";
+                            var endHtml = "<input name='end' value='"+end+"' hidden>"
+                            var startHtml = "<input name='start' value='"+start+"' hidden>";
+                            var roomnameHtml = "<input name='roomname' value='"+ roomname +"' hidden>";
+                            console.log(start.toString());
+                            $("#hiddenDiv").append(roomnameHtml);
                             $("#hiddenDiv").append(startHtml);
                             $("#hiddenDiv").append(endHtml);
-
                             $("#content").val(str);
                             $("#myform").removeAttr('onsubmit');
                             $("#myform").submit();
